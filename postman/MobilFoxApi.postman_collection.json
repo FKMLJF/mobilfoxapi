@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "ebc4b962-61f5-4dae-b651-d1a0481543c3",
+		"name": "MobilFoxApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"mobilfox.{{user_prefix}}\",\r\n    \"password\" : \"{{user_prefix}}1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/auth",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeviceRentList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/api/device/list",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"device",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateNewDeviceRent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deviceName\" : \"iPhone 8+\",\r\n    \"purchaseDate\" : \"2021-12-12 12:00:00\",\r\n    \"deviceValue\" : \"600\",\r\n    \"currentOwner\" : 1,\r\n    \"endDate\" : \"2022-05-12 12:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/device/create",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"device",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDeviceRent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deviceId\" : 3,\r\n    \"deviceName\" : \"iPhone 11\",\r\n    \"purchaseDate\" : \"2021-12-12 12:00:00\",\r\n    \"deviceValue\" : \"700\",\r\n    \"currentOwner\" : 1,\r\n    \"endDate\" : \"2022-05-12 12:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/device/update",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"device",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDevices",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/api/device/delete?device_id=3",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"device",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "device_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeviceRentById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/api/device/list",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"device",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
